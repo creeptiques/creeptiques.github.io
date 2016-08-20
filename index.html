@@ -1,0 +1,25 @@
+---
+layout: default
+---
+
+{% include header.html %}
+<div class="infobar">
+	<div class="v-center">
+		Most Recent<span class="mobile-hide"> posts</span>:
+	</div>
+</div>
+<div class="home-post-wrap">
+{% for post in site.posts limit: 3 %}
+	<div class="home thumb-wrap mobile-hide-thumb">
+	  <a href="{{post.url}}" class="thumb large-thumb" style="background: url(/assets/thumbs/post-{{post.num}}.jpg) no-repeat 50% 50%; background-size: cover;">
+	    <div class="thumb-cover">
+	    	<div class="v-center">
+		      <h2 class="thumb-title">{{ post.title }}</h2>
+		      <hr class="thumb-divide">
+		      <h3 class="thumb-date">{{ post.date | date: "%B %d, %Y" }}</h3>
+	    	</div>
+	    </div>
+	  </a>
+  	</div>
+{% endfor %}
+</div>

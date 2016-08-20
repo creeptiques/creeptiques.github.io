@@ -1,0 +1,203 @@
+//Header
+.site-header
+    width: 100%
+    height: 25vh
+    text-align: center
+    position: relative
+
+.header-link,
+.header-title
+    display: inline-block
+    vertical-align: middle
+    text-transform: uppercase
+    font:
+        size: 1.4rem
+    color: #000
+    transition: all 250ms ease
+    &:hover
+        color: #AD5BCD
+        text-shadow: 0 0 4px #AD5BCD
+
+.header-title
+    font:
+        size: 4.5rem
+        weight: 100
+    margin: 0 3%
+    letter-spacing: .35rem
+    border: 1px solid #000
+    padding: 1rem
+    &:hover
+        text-shadow: 0 0 4px #AD5BCD
+
+.header-active
+    color: #AD5BCD
+    text-shadow: 0 0 4px #AD5BCD
+
+//Homepage & All Posts Grid
+.home
+    height: 70vh
+
+.home-post-wrap
+    margin: 0 
+
+.thumb-wrap
+    width: 33.3333%
+    margin: 0 -.1em
+    display: inline-block
+    position: relative
+    vertical-align: top
+
+.thumb
+    overflow: hidden
+    margin: 0 auto
+    display: block
+    &:hover .thumb-cover
+        transform: translateY(0)
+
+.large-thumb
+    width: 100%
+    height: 100%
+    margin: 0 auto
+    position: absolute
+
+.med-thumb
+    width: 300px
+    height: 444px
+    position: relative
+    margin: 0 auto
+
+    .thumb-cover
+        font:
+            size: .8rem
+
+.thumb-cover
+    background: rgba(255, 255, 255, .8)
+    height: 25%
+    width: 100%
+    color: #000
+    text-align: center
+    position: absolute
+    transform: translateY(-150%)
+    transition: transform 300ms ease
+
+.thumb-divide
+    border: none
+    border-top: 1px solid #000
+    margin: 3px auto 1px
+    width: 30%
+
+.thumb-title
+    font-weight: 300
+
+.thumb-date
+    color: #000
+    font-weight: 100
+
+//Post
+.content-col-left
+    width: 37%
+    height: 100vh
+    position: fixed
+    top: 0
+    left: 0
+
+.content-col-right
+    width: 63%
+    height: 100%
+    margin-left: auto
+
+.content-col-right-wrap
+    width: 80%
+    margin: 0 auto
+
+.post-content
+    width: 100%
+    max-width: 35rem
+    margin: 40px auto 0px
+    line-height: 1.8
+    font-size: 18px
+    letter-spacing: .03rem
+
+    p
+        margin: 0 0 15px 
+
+    a
+        color: #AD5BCD
+        transition: all 200ms ease
+        &:hover
+            border-bottom: 1px solid #AD5BCD
+      
+.post-title,
+.post-subhead,
+.post-title-divider
+    margin: 0 auto
+    text-align: center
+
+.post-title
+    font:
+        weight: 300
+        size: 2rem
+    margin-top: 25px
+
+.post-subhead
+    color: #333
+    font:
+        weight: 100
+        size: 1.5rem
+
+.post-title-divider
+    width: 15%
+    border: none
+    border-top: 1px solid #000
+    margin: 15px auto 0
+
+#disqus_thread
+    margin-top: 40px
+
+//Media Queries/Responsive
+@media(max-width: 1350px)
+    .content-col-right
+        .mobile-hide
+            display: none
+
+@media(max-width: 850px)
+    .mobile-hide-thumb
+        &:not(:first-child)
+            display: none
+    .mobile-hide
+        display: none
+    .home .thumb-cover
+        transform: translateY(0%)
+    .header-title
+        padding: .5rem .75rem .5rem 1rem
+    .content-col-right,
+    .content-col-left
+        position: relative
+        width: 100%
+        display: block
+    .content-col-left
+        height: 75vh
+        z-index: 0
+    .content-col-right-wrap
+        width: 90%
+    .post-content
+        width: 100%
+    .thumb-wrap
+        display: block
+        width: 100%
+        margin: 0 auto
+        &:not(.mobile-hide-thumb)
+            margin: 0 auto 50px
+    .about .content-col-right
+        padding-bottom: 50px
+
+@media(max-width: 425px)
+    .header-link
+        font-size: 1.2rem
+    .infobar
+        font-size: 1.2rem
+        font-weight: 300
+    .header-title
+        padding: 0 .5rem 
+    .thumb-wrap:not(.mobile-hide-thumb)
+        margin: 0 auto 20px

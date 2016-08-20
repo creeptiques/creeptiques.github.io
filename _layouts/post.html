@@ -1,0 +1,36 @@
+---
+layout: default
+---
+
+<article class="post">
+	<div class="content-col-left" style="background: url(/assets/thumbs/post-{{page.num}}.jpg) no-repeat 50% 0%; background-size: cover;"></div>
+	<div class="content-col-right">
+		{% include header.html %}
+	  <div class="content-col-right-wrap">
+		  <h2 class="post-title">{{page.title}}</h2>
+		  <h3 class="post-subhead">{{page.date | date: "%m/%d/%y"}}</h3>
+		  <hr class="post-title-divider">
+		  <div class="post-content">
+		  	{{content}}
+		  	{% if page.comments %}
+			  <div id="disqus_thread"></div>
+					<script>
+					var disqus_config = function () {
+					this.page.url = 'https://creeptiques.com/{{page.url}}';
+					this.page.identifier = '{{page.disqus_identifier}}'; 
+					};
+					(function() { // DON'T EDIT BELOW THIS LINE
+					var d = document, s = d.createElement('script');
+
+					s.src = '//creeptiques.disqus.com/embed.js';
+
+					s.setAttribute('data-timestamp', +new Date());
+					(d.head || d.body).appendChild(s);
+					})();
+					</script>
+					<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+			  </div>
+			  {% endif %}
+		</div>
+	</div>
+</article>
